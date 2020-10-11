@@ -3,7 +3,7 @@ const cfg = {};
 // Build Paths.
 cfg.src = './src';
 cfg.dist_root = './dist';
-cfg.dist = '{dist_root}/lzb-CONTROL-NAME';
+cfg.dist = '{dist_root}/lzb-select-dynamic';
 
 // Copy files.
 cfg.copy_files_src = [ '{src}/**/*', '!{src}/**/*.{js,jsx,scss}', '{src}/**/vendor/**/*.{js,jsx,scss}' ];
@@ -12,19 +12,19 @@ cfg.copy_files_src = [ '{src}/**/*', '!{src}/**/*.{js,jsx,scss}', '{src}/**/vend
 cfg.compile_scss_files_src = [ '{src}/**/*.scss', '!{src}/**/vendor/**/*' ];
 
 // Compile JSX files.
-cfg.compile_jsx_files_src = [ '{src}/*assets/js/CONTROL-NAME.jsx' ];
+cfg.compile_jsx_files_src = [ '{src}/*assets/js/select-dynamic.jsx' ];
 
 // Correct line endings files.
 cfg.correct_line_endings_files_src = '{dist}/**/*.{js,css}';
 
 // Translate PHP files.
 cfg.translate_php_files_src = '{dist}/**/*.php';
-cfg.translate_php_files_dist = `{dist}/languages/lzb-CONTROL-NAME.pot`;
+cfg.translate_php_files_dist = `{dist}/languages/lzb-select-dynamic.pot`;
 cfg.translate_php_options = {
-    domain: 'TEXTDOMAIN',
-    package: 'Lazy Blocks: CONTROL_LABEL Control',
-    lastTranslator: 'AUTHOR_NAME',
-    team: 'AUTHOR_NAME',
+    domain: 'lzb-select-dynamic',
+    package: 'Lazy Blocks: Select Dynamic Control',
+    lastTranslator: 'Jan Widmer',
+    team: 'Jan Widmer',
 };
 
 // Watch files.
