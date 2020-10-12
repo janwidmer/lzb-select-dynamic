@@ -2,13 +2,13 @@
  * Styles for Select Dynamic Control
  */
 .ww-lzb-control_select_dynamic {
-    > .components-base-control {
-        margin-bottom: 10px !important;
+	> .components-base-control {
+		margin-bottom: 10px !important;
 
-        + p {
-            margin-bottom: 0;
-            font-size: .8em;
-            opacity: .6;
-        }
-    }
+		+ p {
+			margin-bottom: 0;
+			font-size: .8em;
+			opacity: .6;
+		}
+	}
 }

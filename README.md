@@ -1,10 +1,6 @@
-# Lazy Blocks Custom Control Template
+# Lazy Blocks Custom Control Select Dynamic
 
-Welcome to the official Lazy Blocks - Custom Control Template repository on GitHub. Here you will find a starter-kit for creating a new custom control plugin.
-
-Production-ready build placed in `dist` directory. Sources placed in `src` directory.
-
-Looking for documentation? Please read the [Create custom control article](https://lazyblocks.com/documentation/examples/create-custom-control/).
+lazy-blocks custom control to offer a dynamic select containing wordpress posts, pages or categories
 
 ## Development
 

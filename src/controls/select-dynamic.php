@@ -64,14 +64,14 @@ if ( ! class_exists( 'ww_Lzb_Control_select_dynamic' ) ) :
                 'ww-lzb-control-select_dynamic',
                 ww_Lzb_Plugin_select_dynamic::$plugin_url . 'assets/js/select-dynamic.min.js',
                 array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components' ),
-                '1.1.4',
+                '1.0.0',
                 true
             );
             wp_register_style(
                 'ww-lzb-control-select_dynamic',
                 ww_Lzb_Plugin_select_dynamic::$plugin_url . 'assets/css/select-dynamic.min.css',
                 array(),
-                '1.1.4'
+                '1.0.0'
             );
         }
 

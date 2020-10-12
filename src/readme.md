@@ -1,21 +1,33 @@
 # Lazy Blocks: Select Dynamic Control
 
 * Contributors: Jan Widmer
-* Tags: lazy-blocks, custom control
-* Requires at least: 5.0.0
-* Tested up to: 5.3
+* Tags: lazy-blocks, custom control, select dynamic
+* Requires at least: 5.5
+* Tested up to: 5.5
 * Requires PHP: 5.5.9
-* Stable tag: 1.1.4
+* Stable tag: 1.0.0
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
-lazy-blocks custom control to offer a dynamic select containing wordpress posts or categories
+lazy-blocks custom control to offer a dynamic select containing wordpress posts, pages or categories
 
 ## Description
 
-This custom control can be used in blocks to offer the Wordpress Author to choose either wordpress pages or taxonomies like categories.
+This custom control enhances the great [Lazy Blocks Plugin](https://lazyblocks.com/) and can be used in blocks to offer the Wordpress Author to choose either wordpress posts, pages or categories.
+
+### Features
+
+* The custom control dynamically renders a select with options based on the chosen `entityType`
+* Available entity types are
+  * Posts
+  * Pages
+  * Categories
+* The select options can be restricted to use a certain page / category as parent
 
 ## Installation
+
+* Make sure you use WordPress 5.0.x. As alternative you need to install the [Gutenberg plugin](https://wordpress.org/plugins/gutenberg/) to use Lazy Blocks.
+* Make sure, you have installed the [Lazy Blocks Plugin](https://lazyblocks.com/)
 
 ### Automatic installation
 

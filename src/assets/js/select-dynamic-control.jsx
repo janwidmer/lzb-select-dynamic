@@ -10,6 +10,7 @@ class SelectDynamicControl extends Component {
 
 		let choices = [];
 
+		// check if items are available (means, loading finished)
 		if (items) {
 			if (items.length === 0) {
 				choices.push({
@@ -77,7 +78,8 @@ export default compose([
 			entityName = 'category';
 		}
 
-		if (ownProps.parentEntity) {
+		// if a parentEntity has been set, we set it as parent parameter, does not work for posts as they cannot be nested
+		if (ownProps.dataType !== 'posts' && ownProps.parentEntity) {
 			query['parent'] = ownProps.parentEntity;
 		}
 
