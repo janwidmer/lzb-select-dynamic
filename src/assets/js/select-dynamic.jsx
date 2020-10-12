@@ -27,6 +27,7 @@ addFilter( 'lzb.editor.control.select_dynamic.render', 'lzb.editor', ( render, p
       label={ props.data.label }
       help={ props.data.help }
       dataType={ props.data.data_type }
+      parentEntity={ props.data.parent_entity }
       value={ props.getValue() }
       onChange={ props.onChange }
     />
@@ -51,11 +52,11 @@ addFilter( 'lzb.constructor.control.select_dynamic.settings', 'lzb.constructor',
                   <RadioControl
                     options={ [
                         {
-                            label: __( 'Pages', '@@text_domain' ),
-                            value: 'pages',
-                        }, {
                             label: __( 'Posts', '@@text_domain' ),
                             value: 'posts',
+                        }, {
+                            label: __( 'Pages', '@@text_domain' ),
+                            value: 'pages',
                         }, {
                             label: __( 'Categories', '@@text_domain' ),
                             value: 'categories',
@@ -63,6 +64,16 @@ addFilter( 'lzb.constructor.control.select_dynamic.settings', 'lzb.constructor',
                     ] }
                     selected={ data.data_type || 'posts' }
                     onChange={ ( value ) => updateData( { data_type: value } ) }
+                  />
+              </BaseControl>
+              <BaseControl
+                label={ __( 'Parent entity', '@@text_domain' ) }
+                help={ __( 'Allows you to restrict the select options to a certain parent entity, otherwise leave blank', '@@text_domain' ) }
+              >
+                  <SelectDynamicControl
+                    dataType={ props.data.data_type }
+                    value={ props.data.parent_entity }
+                    onChange={ ( value ) => updateData( { parent_entity: value } ) }
                   />
               </BaseControl>
           </PanelBody>

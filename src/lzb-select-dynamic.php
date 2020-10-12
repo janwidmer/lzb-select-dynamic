@@ -3,7 +3,7 @@
  * Plugin Name:  Lazy Blocks: Select Dynamic Control
  * Description:  lazy-blocks custom control to offer a dynamic select containing wordpress posts or categories
  * Plugin URI:   https://bitbucket.org/janwidmer/lazy-blocks-custom-select/src/master/
- * Version:      1.1.1
+ * Version:      1.1.4
  * Author:       Jan Widmer
  * Author URI:   https://github.com/janwidmer
  * License:      GPLv2 or later

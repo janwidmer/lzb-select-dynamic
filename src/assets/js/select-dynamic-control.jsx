@@ -77,6 +77,10 @@ export default compose([
 			entityName = 'category';
 		}
 
+		if (ownProps.parentEntity) {
+			query['parent'] = ownProps.parentEntity;
+		}
+
 		return {
 			items: select('core').getEntityRecords(entityKind, entityName, query),
 		};
