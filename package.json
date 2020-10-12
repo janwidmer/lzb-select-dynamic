@@ -7,22 +7,22 @@
   "author": "Jan Widmer <https://github.com/janwidmer>",
   "scripts": {
     "build": "wpeg --build",
-    "dev": "wpeg --build --watch"
+    "dev": "wpeg --build --watch",
+    "production": "wpeg --build --zip"
   },
   "devDependencies": {
-    "@babel/node": "^7.8.4",
     "@babel/core": "^7.8.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
-    "@babel/plugin-transform-react-jsx": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/register": "^7.8.3",
-    "wpeg": "0.0.23"
-  },
-  "dependencies": {
-    "@babel/core": "7.11.6",
     "@babel/cli": "7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "7.10.4",
+    "@babel/register": "^7.11.5",
     "babel-loader": "8.1.0",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "eslint": "7.11.0",
+    "json-file": "0.1.0",
+    "wpeg": "1.0.15"
   }
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:  Lazy Blocks: Select Dynamic Control
+ * Plugin Name:  Lzb Select Dynamic
  * Description:  lazy-blocks custom control to offer a dynamic select containing wordpress posts, pages or categories
- * Plugin URI:   https://bitbucket.org/janwidmer/lazy-blocks-custom-select/src/master/
+ * Plugin URI:   https://github.com/janwidmer/lzb-select-dynamic
  * Version:      1.0.0
  * Author:       Jan Widmer
  * Author URI:   https://github.com/janwidmer
