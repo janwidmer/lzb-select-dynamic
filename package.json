@@ -8,7 +8,9 @@
   "scripts": {
     "build": "wpeg --build",
     "dev": "wpeg --build --watch",
-    "production": "wpeg --build --zip"
+    "production": "npm run make-pot && npm run make-json && wpeg --build --zip",
+    "make-pot": "composer wp -- i18n make-pot ./src ./src/languages/lzb-select-dynamic.pot --skip-audit --exclude=vendor,vendors,node_modules --domain=@@text_domain --headers='{\"Last-Translator\":\"janwidmer\",\"Report-Msgid-Bugs-To\":\"https://github.com/janwidmer/lzb-select-dynamic/issues\"}'",
+    "make-json": "po2json ./src/languages/lzb-select-dynamic.pot ./src/languages/lzb-select-dynamic.json --format=jed1.x --pretty --domain=@@text_domain"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -23,6 +25,7 @@
     "classnames": "^2.2.6",
     "eslint": "7.11.0",
     "json-file": "0.1.0",
+    "po2json": "^0.4.5",
     "wpeg": "1.0.15"
   }
 }

@@ -31,7 +31,7 @@ if ( ! class_exists( 'ww_Lzb_Control_select_dynamic' ) ) :
             $this->type = 'string';
 
             // Control label.
-            $this->label = __( 'Select Dynamic', 'lzb-select-dynamic' );
+            $this->label = __( 'Select Dynamic', '@@text_domain' );
 
             // Category name [basic, content, choice, advanced, layout]
             // How to add custom category - https://lazyblocks.com/documentation/php-filters/lzb-controls-categories/
