@@ -16,4 +16,5 @@ lazy-blocks custom control to offer a dynamic select containing wordpress posts,
 
 ### Releasing
 
-- `git tag 1.0.0` to create a tag for the version to release
+- `git tag v1.0.0` to create a tag for the version to release
+- `git push origin v1.0.0` to push the tag to trigger the git action
