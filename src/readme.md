@@ -1,7 +1,7 @@
 # Lazy Blocks: Select Dynamic Control
 
-* Contributors: Jan Widmer
-* Tags: lazy-blocks, custom control, select dynamic
+* Contributors: janwidmer
+* Tags: lazy-blocks, lazy blocks, custom control, select dynamic
 * Requires at least: 5.5
 * Tested up to: 5.5.1
 * Requires PHP: 5.5.9
