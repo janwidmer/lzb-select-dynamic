@@ -4,9 +4,11 @@ const { __ } = wp.i18n;
 const { withInstanceId, compose} = wp.compose;
 const { SelectControl } = wp.components;
 
+const postTypesToIgnore = ['pages', 'posts', 'media', 'blocks', 'lazyblocks', 'lazyblocks_templates'];
+
 class SelectDynamicControl extends Component {
 	render () {
-		const { label, value, help, dataType, onChange = () => {}, items, } = this.props;
+		const { label, value, help, entityType, onChange = () => {}, items, } = this.props;
 
 		let choices = [];
 
@@ -19,12 +21,23 @@ class SelectDynamicControl extends Component {
 				});
 			} else {
 				for (const item of items) {
-					if (dataType === 'posts') {
+					if (entityType === 'posts') {
+						// select options posts
 						choices.push({ label: item.title.rendered, value: item.id });
-					} else if (dataType === 'pages') {
+					} else if (entityType === 'pages') {
+						// select options pages
 						choices.push({ label: item.title.rendered, value: item.id });
-					} else if (dataType === 'categories') {
+					} else if (entityType === 'categories') {
+						// select options categories
 						choices.push({ label: item.name, value: item.id });
+					} else if (entityType === 'post-type') {
+						// select options custom post types (usage on the lazy blocks constructor page)
+						if (postTypesToIgnore.indexOf(item.rest_base) === -1) {
+							choices.push({ label: item.labels.singular_name, value: item.slug });
+						}
+					} else if (entityType === 'posts-custom') {
+						// select options custom posts for custom post type customEntity
+						choices.push({ label: item.title.rendered, value: item.id });
 					}
 				}
 
@@ -65,26 +78,39 @@ export default compose([
 	withSelect((select, ownProps) => {
 		let entityKind = '';
 		let entityName = '';
-		let query = {};
+		let query = {
+			per_page: -1,
+		};
 
-		if (ownProps.dataType === 'posts') {
+		if (ownProps.entityType === 'posts') {
 			entityKind = 'postType';
 			entityName = 'post';
-		} else if (ownProps.dataType === 'pages') {
+		} else if (ownProps.entityType === 'pages') {
 			entityKind = 'postType';
 			entityName = 'page';
-		} else if (ownProps.dataType === 'categories') {
+		} else if (ownProps.entityType === 'categories') {
 			entityKind = 'taxonomy';
 			entityName = 'category';
+		} else if (ownProps.entityType === 'posts-custom') {
+			entityKind = 'postType';
+			// for posts-custom, we use the selected custom entity (selected custom post type) as entity name
+			entityName = ownProps.customEntity || 'page';
 		}
 
 		// if a parentEntity has been set, we set it as parent parameter, does not work for posts as they cannot be nested
-		if (ownProps.dataType !== 'posts' && ownProps.parentEntity) {
+		if (ownProps.entityType !== 'posts' && ownProps.parentEntity) {
 			query['parent'] = ownProps.parentEntity;
 		}
 
-		return {
-			items: select('core').getEntityRecords(entityKind, entityName, query),
-		};
+		// lazy block constructor mode to get custom post types
+		if (ownProps.entityType === 'post-type') {
+			return {
+				items: select("core").getPostTypes(),
+			};
+		} else {
+			return {
+				items: select('core').getEntityRecords(entityKind, entityName, query),
+			};
+		}
 	}),
 ])(SelectDynamicControl);

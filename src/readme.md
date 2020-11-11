@@ -5,7 +5,7 @@
 * Requires at least: 5.5
 * Tested up to: 5.5.1
 * Requires PHP: 5.5.9
-* Stable tag: 1.0.0
+* Stable tag: 1.0.2
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
@@ -60,6 +60,10 @@ The custom control is using the `getEntityRecords` method.
   a while, as the whole page object get's loaded
 
 ## Changelog
+
+= 1.1.0 =
+
+* Enhancement to offer custom post types as entity
 
 = 1.0.0 =
 
