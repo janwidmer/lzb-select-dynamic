@@ -27,7 +27,7 @@ addFilter('lzb.editor.control.select_dynamic.render', 'lzb.editor', (render, pro
 	label={props.data.label}
 	help={props.data.help}
 	entityType={props.data.entity_type}
-	customEntity={props.data.custom_entity}
+	postType={props.data.post_type}
 	parentEntity={props.data.parent_entity}
 	value={props.getValue()}
 	onChange={props.onChange}
@@ -55,9 +55,6 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 						{
 							label: __('Posts', '@@text_domain'),
 							value: 'posts',
-						},{
-							label: __('Custom Posts', '@@text_domain'),
-							value: 'posts-custom',
 						}, {
 							label: __('Pages', '@@text_domain'),
 							value: 'pages',
@@ -71,27 +68,27 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 				  />
 			  </BaseControl>
 
-			  {props.data.entity_type === 'posts-custom' && (
+			  {props.data.entity_type === 'posts' && (
 				<BaseControl
-				  label={__('Custom entity', '@@text_domain')}
-				  help={__('Allows you to select a custom entity type (posts or taxonomy)', '@@text_domain')}
+				  label={__('Post type', '@@text_domain')}
+				  help={__('Allows you to select a custom post type. Defaults to "Post" if nothing is selected', '@@text_domain')}
 				>
 					<SelectDynamicControl
 					  entityType='post-type'
-					  value={props.data.custom_entity}
-					  onChange={(value) => updateData({ custom_entity: value })}
+					  value={props.data.post_type}
+					  onChange={(value) => updateData({ post_type: value })}
 					/>
 				</BaseControl>
 			  )}
 
-			  {props.data.entity_type !== 'posts' && props.data.entity_type !== 'posts-custom' && (
+			  {props.data.entity_type !== 'posts' && (
 				<BaseControl
 				  label={__('Parent entity', '@@text_domain')}
 				  help={__('Allows you to restrict the select options to a certain parent entity, otherwise leave blank', '@@text_domain')}
 				>
 					<SelectDynamicControl
 					  entityType={props.data.entity_type}
-					  customEntity={props.data.custom_entity}
+					  postType={props.data.post_type}
 					  value={props.data.parent_entity}
 					  onChange={(value) => updateData({ parent_entity: value })}
 					/>

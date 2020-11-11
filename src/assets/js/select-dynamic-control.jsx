@@ -4,7 +4,7 @@ const { __ } = wp.i18n;
 const { withInstanceId, compose} = wp.compose;
 const { SelectControl } = wp.components;
 
-const postTypesToIgnore = ['pages', 'posts', 'media', 'blocks', 'lazyblocks', 'lazyblocks_templates'];
+const postTypesToIgnore = ['pages', 'media', 'blocks', 'lazyblocks', 'lazyblocks_templates'];
 
 class SelectDynamicControl extends Component {
 	render () {
@@ -31,13 +31,10 @@ class SelectDynamicControl extends Component {
 						// select options categories
 						choices.push({ label: item.name, value: item.id });
 					} else if (entityType === 'post-type') {
-						// select options custom post types (usage on the lazy blocks constructor page)
+						// select options for post types (usage on the lazy blocks constructor page)
 						if (postTypesToIgnore.indexOf(item.rest_base) === -1) {
 							choices.push({ label: item.labels.singular_name, value: item.slug });
 						}
-					} else if (entityType === 'posts-custom') {
-						// select options custom posts for custom post type customEntity
-						choices.push({ label: item.title.rendered, value: item.id });
 					}
 				}
 
@@ -84,17 +81,13 @@ export default compose([
 
 		if (ownProps.entityType === 'posts') {
 			entityKind = 'postType';
-			entityName = 'post';
+			entityName = ownProps.postType || 'post'; // if a postType is given we use it (to get custom posts)
 		} else if (ownProps.entityType === 'pages') {
 			entityKind = 'postType';
 			entityName = 'page';
 		} else if (ownProps.entityType === 'categories') {
 			entityKind = 'taxonomy';
 			entityName = 'category';
-		} else if (ownProps.entityType === 'posts-custom') {
-			entityKind = 'postType';
-			// for posts-custom, we use the selected custom entity (selected custom post type) as entity name
-			entityName = ownProps.customEntity || 'page';
 		}
 
 		// if a parentEntity has been set, we set it as parent parameter, does not work for posts as they cannot be nested
