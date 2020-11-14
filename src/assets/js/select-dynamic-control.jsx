@@ -27,7 +27,7 @@ class SelectDynamicControl extends Component {
 					} else if (entityType === 'pages') {
 						// select options pages
 						choices.push({ label: item.title.rendered, value: item.id });
-					} else if (entityType === 'categories') {
+					} else if (entityType === 'taxonomies') {
 						// select options categories
 						choices.push({ label: item.name, value: item.id });
 					} else if (entityType === 'post-type') {
@@ -35,6 +35,9 @@ class SelectDynamicControl extends Component {
 						if (postTypesToIgnore.indexOf(item.rest_base) === -1) {
 							choices.push({ label: item.labels.singular_name, value: item.slug });
 						}
+					} else if (entityType === 'taxonomy-type') {
+						// select options for post types (usage on the lazy blocks constructor page)
+						choices.push({ label: item.labels.singular_name, value: item.slug });
 					}
 				}
 
@@ -85,20 +88,25 @@ export default compose([
 		} else if (ownProps.entityType === 'pages') {
 			entityKind = 'postType';
 			entityName = 'page';
-		} else if (ownProps.entityType === 'categories') {
+		} else if (ownProps.entityType === 'taxonomies') {
 			entityKind = 'taxonomy';
-			entityName = 'category';
+			entityName = ownProps.taxonomyType || 'category'; // if a taxonomyType is given we use it (to get custom taxonomies)
 		}
 
-		// if a parentEntity has been set, we set it as parent parameter, does not work for posts as they cannot be nested
-		if (ownProps.entityType !== 'posts' && ownProps.parentEntity) {
+		// does not work for posts / custom posts / tags as they cannot be nested
+		if (ownProps.entityType !== 'posts' && (ownProps.taxonomyType && ownProps.taxonomyType !== 'post_tag') && ownProps.parentEntity) {
 			query['parent'] = ownProps.parentEntity;
 		}
 
-		// lazy block constructor mode to get custom post types
 		if (ownProps.entityType === 'post-type') {
+			// lazy block constructor mode to get post types
 			return {
 				items: select("core").getPostTypes(),
+			};
+		} else if (ownProps.entityType === 'taxonomy-type') {
+			// lazy block constructor mode to get taxonomy types
+			return {
+				items: select("core").getTaxonomies(),
 			};
 		} else {
 			return {
