@@ -1,13 +1,9 @@
 {
-    "require": {
-        "composer-plugin-api": "1.*"
-    },
     "require-dev": {
-        "composer/composer": "1.10.17",
         "wp-coding-standards/wpcs": "^2.2.1",
         "phpcompatibility/phpcompatibility-wp": "^2.1.0",
         "wp-cli/i18n-command": "^2.2.2",
-        "dealerdirect/phpcodesniffer-composer-installer": "^v0.7.0"
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
     },
     "scripts": {
         "phpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
