@@ -61,7 +61,7 @@ The custom control is using the `getEntityRecords` method.
 
 ## Changelog
 
-= 1.1.0 =
+= 1.1.1 =
 
 * Enhancement to offer custom post types and tags / categories as entity
 
