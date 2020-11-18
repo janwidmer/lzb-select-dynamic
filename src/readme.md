@@ -3,9 +3,9 @@
 * Contributors: janwidmer
 * Tags: lazy-blocks, lazy blocks, custom control, select dynamic
 * Requires at least: 5.5
-* Tested up to: 5.5.1
+* Tested up to: 5.5.3
 * Requires PHP: 5.5.9
-* Stable tag: 1.0.2
+* Stable tag: 1.1.0
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
@@ -20,9 +20,9 @@ the Wordpress Author to choose either wordpress posts, pages or categories.
 
 * The custom control dynamically renders a select with options based on the chosen `entityType`
 * Available entity types are
-  * Posts
+  * Posts (Default or Custom post types)
   * Pages
-  * Categories
+  * Taxonomies (Tags or Categories)
 * The select options can be restricted to use a certain page / category as parent
 
 ## Installation
@@ -63,7 +63,7 @@ The custom control is using the `getEntityRecords` method.
 
 = 1.1.0 =
 
-* Enhancement to offer custom post types as entity
+* Enhancement to offer custom post types and tags / categories as entity
 
 = 1.0.0 =
 

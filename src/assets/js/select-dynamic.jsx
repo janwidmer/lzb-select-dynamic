@@ -85,7 +85,7 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 			  {props.data.entity_type && props.data.entity_type === 'taxonomies' && (
 				<BaseControl
 				  label={__('Taxonomy type', '@@text_domain')}
-				  help={__('Allows you to select a custom taxonomy type. Defaults to "Category" if nothing is selected', '@@text_domain')}
+				  help={__('Allows you to select a taxonomy type. Defaults to "Category" if nothing is selected', '@@text_domain')}
 				>
 					<SelectDynamicControl
 					  entityType='taxonomy-type'

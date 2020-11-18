@@ -93,8 +93,8 @@ export default compose([
 			entityName = ownProps.taxonomyType || 'category'; // if a taxonomyType is given we use it (to get custom taxonomies)
 		}
 
-		// does not work for posts / custom posts / tags as they cannot be nested
-		if (ownProps.entityType !== 'posts' && (ownProps.taxonomyType && ownProps.taxonomyType !== 'post_tag') && ownProps.parentEntity) {
+		// does only work for pages / categories as other entities cannot be nested
+		if ((ownProps.entityType === 'pages' || (ownProps.entityType === 'taxonomies' && ownProps.taxonomyType === 'category')) && ownProps.parentEntity) {
 			query['parent'] = ownProps.parentEntity;
 		}
 
