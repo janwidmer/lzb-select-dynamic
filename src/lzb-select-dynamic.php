@@ -3,7 +3,7 @@
  * Plugin Name:  Lzb Select Dynamic
  * Description:  lazy-blocks custom control to offer a dynamic select containing wordpress posts, pages or categories
  * Plugin URI:   https://github.com/janwidmer/lzb-select-dynamic
- * Version:      1.1.4
+ * Version:      1.1.5
  * Author:       Jan Widmer
  * Author URI:   https://github.com/janwidmer
  * License:      GPLv2 or later
