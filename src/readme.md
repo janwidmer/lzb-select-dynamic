@@ -5,7 +5,7 @@
 * Requires at least: 5.5
 * Tested up to: 5.7.2
 * Requires PHP: 5.5.9
-* Stable tag: 1.1.5
+* Stable tag: 2.1.0
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
@@ -20,10 +20,22 @@ the Wordpress Author to choose either wordpress posts, pages or categories.
 
 * The custom control dynamically renders a select with options based on the chosen `entityType`
 * Available entity types are
-  * Posts (Default or Custom post types)
-  * Pages
-  * Taxonomies (Tags or Categories)
-* The select options can be restricted to use a certain page / category as parent
+  * Post Type
+  * Taxonomy Type
+  * Post (Default or Custom post types)
+  * Page
+  * Taxonomy (Tags, Categories, Custom Taxonomy)
+* The select options can be restricted to use a certain entry as parent
+
+### Restrictions
+
+The custom control is using the `getEntityRecords` method.
+
+* This method can load a maximum of 100 entities and render them as dropdown options
+* When choosing the entity type `Page`, depending on the number of pages you have, the first time, the call might take
+  a while, as the whole page object get's loaded
+* To use a custom taxonomy type, make sure to activate the REST option in the `register_taxonomy` function by adding `'show_in_rest' => true,`
+* Parent Entity Restriction does only work for Pages / Categories / Custom Taxonomies, as other Entity Types (e.g. Posts / Tags) cannot be nested
 
 ## Installation
 
@@ -51,15 +63,15 @@ via your favourite FTP application. The WordPress codex contains
 
 You can use the custom control exactly how you use normal controls for lazy blocks
 
-### Restrictions
-
-The custom control is using the `getEntityRecords` method. 
-
-* This method can load a maximum of 100 entities and render them as dropdown options
-* When choosing the entity type `Pages`, depending on the number of pages you have, the first time, the call might take 
-  a while, as the whole page object get's loaded
-
 ## Changelog
+
+= 2.1.0 =
+
+* Enhancement to have Taxonomy Type as an option 
+
+= 2.0.0 =
+
+* BREAKING: rename options, enhance with "Post Type" option to select a certain Post type in your block. Manual Migration needed!
 
 = 1.1.4 =
 

@@ -38,13 +38,31 @@
          "Allows you to select the entity type to render as select options": [
             ""
          ],
-         "Posts": [
+         "Post Type": [
             ""
          ],
-         "Pages": [
+         "Taxonomy Type": [
             ""
          ],
-         "Categories": [
+         "Post": [
+            ""
+         ],
+         "Page": [
+            ""
+         ],
+         "Taxonomy": [
+            ""
+         ],
+         "Post type": [
+            ""
+         ],
+         "Allows you to select a custom post type. Defaults to \"Post\" if nothing is selected": [
+            ""
+         ],
+         "Taxonomy type": [
+            ""
+         ],
+         "Allows you to select a taxonomy type. Defaults to \"Category\" if nothing is selected": [
             ""
          ],
          "Parent entity": [

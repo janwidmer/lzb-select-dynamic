@@ -21,22 +21,20 @@ class SelectDynamicControl extends Component {
 				});
 			} else {
 				for (const item of items) {
-					if (entityType === 'posts') {
-						// select options posts
+					if (entityType === 'post') {
+						// select options post
 						choices.push({ label: item.title.rendered, value: item.id });
-					} else if (entityType === 'pages') {
-						// select options pages
+					} else if (entityType === 'page') {
+						// select options page
 						choices.push({ label: item.title.rendered, value: item.id });
-					} else if (entityType === 'taxonomies') {
+					} else if (entityType === 'taxonomy') {
 						// select options categories
 						choices.push({ label: item.name, value: item.id });
 					} else if (entityType === 'post-type') {
-						// select options for post types (usage on the lazy blocks constructor page)
 						if (postTypesToIgnore.indexOf(item.rest_base) === -1) {
 							choices.push({ label: item.labels.singular_name, value: item.slug });
 						}
 					} else if (entityType === 'taxonomy-type') {
-						// select options for post types (usage on the lazy blocks constructor page)
 						choices.push({ label: item.labels.singular_name, value: item.slug });
 					}
 				}
@@ -82,29 +80,27 @@ export default compose([
 			per_page: -1,
 		};
 
-		if (ownProps.entityType === 'posts') {
+		if (ownProps.entityType === 'post') {
 			entityKind = 'postType';
 			entityName = ownProps.postType || 'post'; // if a postType is given we use it (to get custom posts)
-		} else if (ownProps.entityType === 'pages') {
+		} else if (ownProps.entityType === 'page') {
 			entityKind = 'postType';
 			entityName = 'page';
-		} else if (ownProps.entityType === 'taxonomies') {
+		} else if (ownProps.entityType === 'taxonomy') {
 			entityKind = 'taxonomy';
-			entityName = ownProps.taxonomyType || 'category'; // if a taxonomyType is given we use it (to get custom taxonomies)
+			entityName = ownProps.taxonomyType || 'category'; // if a taxonomyType is given we use it (to get custom taxonomy)
 		}
 
-		// does only work for pages / categories as other entities cannot be nested
-		if ((ownProps.entityType === 'pages' || (ownProps.entityType === 'taxonomies' && ownProps.taxonomyType === 'category')) && ownProps.parentEntity) {
+		// does only work for pages / taxonomies other than tags as other entities cannot be nested
+		if ((ownProps.entityType === 'page' || (ownProps.entityType === 'taxonomy' && ownProps.taxonomyType !== 'tag')) && ownProps.parentEntity) {
 			query['parent'] = ownProps.parentEntity;
 		}
 
 		if (ownProps.entityType === 'post-type') {
-			// lazy block constructor mode to get post types
 			return {
 				items: select("core").getPostTypes(),
 			};
 		} else if (ownProps.entityType === 'taxonomy-type') {
-			// lazy block constructor mode to get taxonomy types
 			return {
 				items: select("core").getTaxonomies(),
 			};

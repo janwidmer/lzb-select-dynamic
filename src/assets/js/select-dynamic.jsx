@@ -54,14 +54,20 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 				  <RadioControl
 					options={[
 						{
-							label: __('Posts', '@@text_domain'),
-							value: 'posts',
+							label: __('Post Type', '@@text_domain'),
+							value: 'post-type',
 						}, {
-							label: __('Pages', '@@text_domain'),
-							value: 'pages',
+							label: __('Taxonomy Type', '@@text_domain'),
+							value: 'taxonomy-type',
 						}, {
-							label: __('Taxonomies', '@@text_domain'),
-							value: 'taxonomies',
+							label: __('Post', '@@text_domain'),
+							value: 'post',
+						}, {
+							label: __('Page', '@@text_domain'),
+							value: 'page',
+						}, {
+							label: __('Taxonomy', '@@text_domain'),
+							value: 'taxonomy',
 						}
 					]}
 					selected={data.entity_type || ''}
@@ -69,7 +75,7 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 				  />
 			  </BaseControl>
 
-			  {props.data.entity_type && props.data.entity_type === 'posts' && (
+			  {props.data.entity_type && props.data.entity_type === 'post' && (
 				<BaseControl
 				  label={__('Post type', '@@text_domain')}
 				  help={__('Allows you to select a custom post type. Defaults to "Post" if nothing is selected', '@@text_domain')}
@@ -82,7 +88,7 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 				</BaseControl>
 			  )}
 
-			  {props.data.entity_type && props.data.entity_type === 'taxonomies' && (
+			  {props.data.entity_type && props.data.entity_type === 'taxonomy' && (
 				<BaseControl
 				  label={__('Taxonomy type', '@@text_domain')}
 				  help={__('Allows you to select a taxonomy type. Defaults to "Category" if nothing is selected', '@@text_domain')}
@@ -95,7 +101,7 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 				</BaseControl>
 			  )}
 
-			  {((props.data.entity_type && props.data.entity_type === 'pages') || (props.data.taxonomy_type && props.data.taxonomy_type === 'category')) && (
+			  {((props.data.entity_type && props.data.entity_type === 'page') || (props.data.taxonomy_type && props.data.taxonomy_type !== 'tags')) && (
 				<BaseControl
 				  label={__('Parent entity', '@@text_domain')}
 				  help={__('Allows you to restrict the select options to a certain parent entity, otherwise leave blank', '@@text_domain')}

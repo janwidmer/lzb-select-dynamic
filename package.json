@@ -1,7 +1,7 @@
 {
   "name": "lzb-select-dynamic",
   "title": "Lazy Blocks: Select Dynamic Control",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "lazy-blocks custom control to offer a dynamic select containing wordpress posts or categories",
   "license": "GPL-2.0",
   "author": "Jan Widmer <https://github.com/janwidmer>",

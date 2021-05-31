@@ -1,15 +1,15 @@
-# Copyright (C) 2020 Jan Widmer
+# Copyright (C) 2021 Jan Widmer
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Lzb Select Dynamic 1.0.0\n"
+"Project-Id-Version: Lzb Select Dynamic 2.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/janwidmer/lzb-select-dynamic/issues\n"
 "Last-Translator: janwidmer\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-10-18T12:31:12+00:00\n"
+"POT-Creation-Date: 2021-05-31T09:33:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: @@text_domain\n"
@@ -38,42 +38,66 @@ msgstr ""
 msgid "Select Dynamic"
 msgstr ""
 
-#: assets/js/select-dynamic-control.jsx:18
+#: assets/js/select-dynamic-control.jsx:20
 msgid "No items found"
 msgstr ""
 
-#: assets/js/select-dynamic-control.jsx:34
+#: assets/js/select-dynamic-control.jsx:45
 msgid "Please Select"
 msgstr ""
 
-#: assets/js/select-dynamic-control.jsx:42
+#: assets/js/select-dynamic-control.jsx:53
 msgid "Loading.."
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:49
+#: assets/js/select-dynamic.jsx:51
 msgid "Entity Type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:50
+#: assets/js/select-dynamic.jsx:52
 msgid "Allows you to select the entity type to render as select options"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:55
-msgid "Posts"
+#: assets/js/select-dynamic.jsx:57
+msgid "Post Type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:58
-msgid "Pages"
+#: assets/js/select-dynamic.jsx:60
+msgid "Taxonomy Type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:61
-msgid "Categories"
+#: assets/js/select-dynamic.jsx:63
+msgid "Post"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:70
+#: assets/js/select-dynamic.jsx:66
+msgid "Page"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:69
+msgid "Taxonomy"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:80
+msgid "Post type"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:81
+msgid "Allows you to select a custom post type. Defaults to \"Post\" if nothing is selected"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:93
+msgid "Taxonomy type"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:94
+msgid "Allows you to select a taxonomy type. Defaults to \"Category\" if nothing is selected"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:106
 msgid "Parent entity"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:71
+#: assets/js/select-dynamic.jsx:107
 msgid "Allows you to restrict the select options to a certain parent entity, otherwise leave blank"
 msgstr ""
