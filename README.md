@@ -13,7 +13,7 @@ lazy-blocks custom control to offer a dynamic select containing wordpress posts,
 
 ### Building
 
-- adjust plugin version in the files `lzb-select-dynamic.php` and `readme.md` to the new desired version depending on your changes
+- adjust plugin version in the `package.json` to the new desired version depending on your changes
 - `npm run build` to run build
 - `npm run dev` to run build and start files watcher
 - `npm run production` to run build and prepare zip files for production
@@ -29,4 +29,4 @@ lazy-blocks custom control to offer a dynamic select containing wordpress posts,
 
 - `git tag v1.0.0` to create a tag for the version to release
 - `git push origin v1.0.0` to push the tag to trigger the git action
-- If it's a bigger Release, manually create a release on https://github.com/janwidmer/lzb-select-dynamic/releases
+- attach the dist of the plugin as zip file to the release
