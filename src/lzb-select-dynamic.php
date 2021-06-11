@@ -3,12 +3,12 @@
  * Plugin Name:  Lzb Select Dynamic
  * Description:  lazy-blocks custom control to offer a dynamic select containing wordpress posts, pages or categories
  * Plugin URI:   https://github.com/janwidmer/lzb-select-dynamic
- * Version:      2.1.0
+ * Version:      @@plugin_version
  * Author:       Jan Widmer
  * Author URI:   https://github.com/janwidmer
  * License:      GPLv2 or later
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:  lzb-select-dynamic
+ * Text Domain:  @@text_domain
  *
  * @package lzb-select-dynamic
  */
@@ -60,7 +60,7 @@ class ww_Lzb_Plugin_select_dynamic {
         self::$plugin_url  = plugin_dir_url( __FILE__ );
 
         // Translations.
-        load_plugin_textdomain( 'lzb-select-dynamic', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain( '@@text_domain', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
         // Include control.
         include_once self::$plugin_path . '/controls/select-dynamic.php';
