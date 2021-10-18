@@ -2,9 +2,9 @@
 
 * Contributors: janwidmer
 * Tags: lazy-blocks, lazy blocks, custom control, select dynamic
-* Requires at least: 5.5
+* Requires at least: 5.8
 * Tested up to: 5.8.1
-* Requires PHP: 5.5.9
+* Requires PHP: 7.2
 * Stable tag: @@plugin_version
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
@@ -64,6 +64,11 @@ via your favourite FTP application. The WordPress codex contains
 You can use the custom control exactly how you use normal controls for lazy blocks
 
 ## Changelog
+
+= 2.1.4 =
+
+* changed minimal WP version to 5.8
+* changed minimal PHP version to 7.2
 
 = 2.1.0 =
 
