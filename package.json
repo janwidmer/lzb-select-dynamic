@@ -1,12 +1,12 @@
 {
   "name": "lzb-select-dynamic",
   "title": "Lazy Blocks: Select Dynamic Control",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "lazy-blocks custom control to offer a dynamic select containing wordpress posts or categories",
   "license": "GPL-2.0",
   "author": "Jan Widmer <https://github.com/janwidmer>",
   "scripts": {
-    "build": "wpeg --build",
+    "build": "wpeg --build --zip",
     "dev": "wpeg --build --watch",
     "production": "npm run make-pot && npm run make-json && wpeg --build --zip",
     "make-pot": "composer wp -- i18n make-pot ./src ./src/languages/lzb-select-dynamic.pot --skip-audit --exclude=vendor,vendors,node_modules --domain=@@text_domain --headers='{\"Last-Translator\":\"janwidmer\",\"Report-Msgid-Bugs-To\":\"https://github.com/janwidmer/lzb-select-dynamic/issues\"}'",
@@ -27,7 +27,7 @@
     "classnames": "^2.2.6",
     "eslint": "7.11.0",
     "json-file": "0.1.0",
-    "po2json": "^0.4.5",
-    "wpeg": "1.0.15"
+    "po2json": "~0.4.5",
+    "wpeg": "1.2.6"
   }
 }

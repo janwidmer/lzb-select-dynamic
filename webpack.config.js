@@ -4,8 +4,7 @@ module.exports = {
             {
                 test: /(\.jsx|\.js)$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
+                options: {
                     presets: ['@babel/react'],
                 }
             }, {
@@ -39,6 +38,9 @@ module.exports = {
     },
     resolve: {
         extensions: [ '.js', '.jsx', '.json' ],
+        alias: {
+            handlebars: 'handlebars/dist/handlebars.min.js',
+        },
     },
     externals: {
         react: 'React',

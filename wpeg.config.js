@@ -18,11 +18,19 @@ cfg.template_files_variables = {
     plugin_title: pkg.title,
     plugin_author: pkg.author,
 };
+
 // Copy files.
-cfg.copy_files_src = [ '{src}/**/*', '!{src}/**/*.{js,jsx,scss}', '{src}/**/vendor/**/*.{js,jsx,scss}' ];
+cfg.copy_files_src = [
+    '{src}/**/*',
+    '!{src}/**/*.{js,jsx,scss}',
+    '{src}/**/vendor/**/*.{js,jsx,scss}',
+];
 
 // Compile SCSS files.
-cfg.compile_scss_files_src = [ '{src}/**/*.scss', '!{src}/**/vendor/**/*' ];
+cfg.compile_scss_files_src = [
+    '{src}/**/*.scss',
+    '!{src}/**/vendor/**/*',
+];
 
 // Compile JSX files.
 cfg.compile_jsx_files_src = [ '{src}/*assets/js/select-dynamic.jsx' ];
