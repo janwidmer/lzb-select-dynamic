@@ -3,7 +3,7 @@
 * Contributors: janwidmer
 * Tags: lazy-blocks, lazy blocks, custom control, select dynamic
 * Requires at least: 5.8
-* Tested up to: 5.8.2
+* Tested up to: 5.9.0
 * Requires PHP: 7.2
 * Stable tag: @@plugin_version
 * License: GPLv2 or later
