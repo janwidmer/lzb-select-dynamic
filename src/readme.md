@@ -36,6 +36,8 @@ The custom control is using the `getEntityRecords` method.
   a while, as the whole page object get's loaded
 * To use a custom taxonomy type, make sure to activate the REST option in the `register_taxonomy` function by adding `'show_in_rest' => true,`
 * Parent Entity Restriction does only work for Pages / Categories / Custom Taxonomies, as other Entity Types (e.g. Posts / Tags) cannot be nested
+* For the `entityType` `post-type`, an ignore list excludes all wordpress related post types:
+  * `pages`, `media`, `blocks`, `menu-items`, `navigation`, `templates`, `template-parts`, `lazyblocks`, `lazyblocks_templates`
 
 ## Installation
 
@@ -64,6 +66,11 @@ via your favourite FTP application. The WordPress codex contains
 You can use the custom control exactly how you use normal controls for lazy blocks
 
 ## Changelog
+
+= 2.2.0 =
+
+* Add more post types to ignore list, add docs about ignore list
+* changed compatibility to WP version to 5.9.0
 
 = 2.1.5 =
 

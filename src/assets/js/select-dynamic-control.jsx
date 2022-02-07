@@ -4,7 +4,17 @@ const { __ } = wp.i18n;
 const { withInstanceId, compose} = wp.compose;
 const { SelectControl } = wp.components;
 
-const postTypesToIgnore = ['pages', 'media', 'blocks', 'lazyblocks', 'lazyblocks_templates'];
+const postTypesToIgnore = [
+	'pages',
+	'media',
+	'blocks',
+	'menu-items',
+	'navigation',
+	'templates',
+	'template-parts',
+	'lazyblocks',
+	'lazyblocks_templates'
+];
 
 class SelectDynamicControl extends Component {
 	render () {
