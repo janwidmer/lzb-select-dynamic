@@ -108,7 +108,8 @@ export default compose([
 
 		if (ownProps.entityType === 'post-type') {
 			return {
-				items: select("core").getPostTypes(),
+				// parameter needed because https://github.com/WordPress/gutenberg/issues/38563
+				items: select("core").getPostTypes({ per_page: -1 }),
 			};
 		} else if (ownProps.entityType === 'taxonomy-type') {
 			return {

@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Jan Widmer
+# Copyright (C) 2022 Jan Widmer
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-18T12:26:35+00:00\n"
+"POT-Creation-Date: 2022-02-07T10:35:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: @@text_domain\n"
@@ -38,15 +38,15 @@ msgstr ""
 msgid "Select Dynamic"
 msgstr ""
 
-#: assets/js/select-dynamic-control.jsx:20
+#: assets/js/select-dynamic-control.jsx:30
 msgid "No items found"
 msgstr ""
 
-#: assets/js/select-dynamic-control.jsx:45
+#: assets/js/select-dynamic-control.jsx:55
 msgid "Please Select"
 msgstr ""
 
-#: assets/js/select-dynamic-control.jsx:53
+#: assets/js/select-dynamic-control.jsx:63
 msgid "Loading.."
 msgstr ""
 

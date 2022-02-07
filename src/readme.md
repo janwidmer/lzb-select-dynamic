@@ -67,6 +67,10 @@ You can use the custom control exactly how you use normal controls for lazy bloc
 
 ## Changelog
 
+= 2.2.1 =
+
+* Fix problem with missing custom post types for entity type `post-type`
+
 = 2.2.0 =
 
 * Add more post types to ignore list, add docs about ignore list
