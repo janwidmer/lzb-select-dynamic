@@ -50,8 +50,11 @@ if ( ! class_exists( 'ww_Lzb_Control_select_dynamic' ) ) :
 
             // Optional additional attributes, that will be saved in control data.
             $this->attributes = array(
-                'select_dynamic_custom_attribute' => 'default_value',
+                'multiple'      => 'false',
             );
+
+            // Filters.
+            add_filter( 'lzb/prepare_block_attribute', array( $this, 'filter_lzb_prepare_block_attribute' ), 10, 2 );
 
             parent::__construct();
         }
@@ -91,6 +94,33 @@ if ( ! class_exists( 'ww_Lzb_Control_select_dynamic' ) ) :
          */
         public function get_style_depends() {
             return array( 'ww-lzb-control-select_dynamic' );
+        }
+
+        /**
+         * Filter block attribute.
+         *
+         * @param string $attribute_data - attribute data.
+         * @param mixed  $control - control data.
+         *
+         * @return array filtered attribute data.
+         */
+        public function filter_lzb_prepare_block_attribute( $attribute_data, $control ) {
+            if (
+                ! $control ||
+                ! isset( $control['type'] ) ||
+                $this->name !== $control['type'] ||
+                ! isset( $control['multiple'] )
+            ) {
+                return $attribute_data;
+            }
+
+            if ( 'true' === $control['multiple'] ) {
+                $attribute_data['type']    = 'array';
+                $attribute_data['items']   = array( 'type' => 'string' );
+                $attribute_data['default'] = explode( ',', $attribute_data['default'] );
+            }
+
+            return $attribute_data;
         }
     }
 

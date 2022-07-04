@@ -17,6 +17,7 @@ const {
 	PanelBody,
 	BaseControl,
 	RadioControl,
+  	CheckboxControl,
 } = wp.components;
 
 /**
@@ -30,6 +31,7 @@ addFilter('lzb.editor.control.select_dynamic.render', 'lzb.editor', (render, pro
 	postType={props.data.post_type}
 	taxonomyType={props.data.taxonomy_type}
 	parentEntity={props.data.parent_entity}
+	multiple={ 'true' === props.data.multiple }
 	value={props.getValue()}
 	onChange={props.onChange}
   />
@@ -115,7 +117,22 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 					/>
 				</BaseControl>
 			  )}
+
 		  </PanelBody>
+		  {(props.data.entity_type && (props.data.entity_type === 'post' || props.data.entity_type === 'page' || props.data.entity_type === 'taxonomy')) && (
+			<PanelBody>
+				<BaseControl
+				  label={ __( 'Multiple', '@@text_domain' ) }
+				  help={ __( 'Allows you to select multiple values', '@@text_domain' ) }
+				>
+					<CheckboxControl
+					  label={ __( 'Yes', '@@text_domain' ) }
+					  checked={ 'true' === data.multiple }
+					  onChange={ ( value ) => updateData( { multiple: value ? 'true' : 'false' } ) }
+					/>
+				</BaseControl>
+			</PanelBody>
+		  )}
 	  </Fragment>
 	);
 });

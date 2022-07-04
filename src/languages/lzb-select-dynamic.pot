@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-07T10:35:37+00:00\n"
+"POT-Creation-Date: 2022-07-04T09:07:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: @@text_domain\n"
@@ -50,54 +50,66 @@ msgstr ""
 msgid "Loading.."
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:51
+#: assets/js/select-dynamic.jsx:53
 msgid "Entity Type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:52
+#: assets/js/select-dynamic.jsx:54
 msgid "Allows you to select the entity type to render as select options"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:57
+#: assets/js/select-dynamic.jsx:59
 msgid "Post Type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:60
+#: assets/js/select-dynamic.jsx:62
 msgid "Taxonomy Type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:63
+#: assets/js/select-dynamic.jsx:65
 msgid "Post"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:66
+#: assets/js/select-dynamic.jsx:68
 msgid "Page"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:69
+#: assets/js/select-dynamic.jsx:71
 msgid "Taxonomy"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:80
+#: assets/js/select-dynamic.jsx:82
 msgid "Post type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:81
+#: assets/js/select-dynamic.jsx:83
 msgid "Allows you to select a custom post type. Defaults to \"Post\" if nothing is selected"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:93
+#: assets/js/select-dynamic.jsx:95
 msgid "Taxonomy type"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:94
+#: assets/js/select-dynamic.jsx:96
 msgid "Allows you to select a taxonomy type. Defaults to \"Category\" if nothing is selected"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:106
+#: assets/js/select-dynamic.jsx:108
 msgid "Parent entity"
 msgstr ""
 
-#: assets/js/select-dynamic.jsx:107
+#: assets/js/select-dynamic.jsx:109
 msgid "Allows you to restrict the select options to a certain parent entity, otherwise leave blank"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:125
+msgid "Multiple"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:126
+msgid "Allows you to select multiple values"
+msgstr ""
+
+#: assets/js/select-dynamic.jsx:129
+msgid "Yes"
 msgstr ""

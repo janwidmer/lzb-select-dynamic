@@ -18,7 +18,7 @@ const postTypesToIgnore = [
 
 class SelectDynamicControl extends Component {
 	render () {
-		const { label, value, help, entityType, onChange = () => {}, items, } = this.props;
+		const { label, value, help, entityType, multiple, onChange = () => {}, items, } = this.props;
 
 		let choices = [];
 
@@ -71,6 +71,7 @@ class SelectDynamicControl extends Component {
 				options={ choices }
 				help={ help }
 				value={ value }
+				multiple={ multiple }
 				className="lzb-gutenberg-select"
 				onChange={(val) => {
 					onChange(val);
@@ -90,19 +91,21 @@ export default compose([
 			per_page: -1,
 		};
 
+		debugger
+
 		if (ownProps.entityType === 'post') {
 			entityKind = 'postType';
-			entityName = ownProps.postType || 'post'; // if a postType is given we use it (to get custom posts)
+			entityName = ownProps.postType || 'post'; // if a postType is given we use it (to get custom posts)
 		} else if (ownProps.entityType === 'page') {
 			entityKind = 'postType';
 			entityName = 'page';
 		} else if (ownProps.entityType === 'taxonomy') {
 			entityKind = 'taxonomy';
-			entityName = ownProps.taxonomyType || 'category'; // if a taxonomyType is given we use it (to get custom taxonomy)
+			entityName = ownProps.taxonomyType || 'category'; // if a taxonomyType is given we use it (to get custom taxonomy)
 		}
 
 		// does only work for pages / taxonomies other than tags as other entities cannot be nested
-		if ((ownProps.entityType === 'page' || (ownProps.entityType === 'taxonomy' && ownProps.taxonomyType !== 'tag')) && ownProps.parentEntity) {
+		if ((ownProps.entityType === 'page' || (ownProps.entityType === 'taxonomy' && ownProps.taxonomyType !== 'tag')) && ownProps.parentEntity) {
 			query['parent'] = ownProps.parentEntity;
 		}
 

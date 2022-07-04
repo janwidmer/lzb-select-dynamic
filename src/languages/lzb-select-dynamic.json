@@ -70,6 +70,15 @@
          ],
          "Allows you to restrict the select options to a certain parent entity, otherwise leave blank": [
             ""
+         ],
+         "Multiple": [
+            ""
+         ],
+         "Allows you to select multiple values": [
+            ""
+         ],
+         "Yes": [
+            ""
          ]
       }
    }

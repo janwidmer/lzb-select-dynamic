@@ -3,7 +3,7 @@
 * Contributors: janwidmer
 * Tags: lazy-blocks, lazy blocks, custom control, select dynamic
 * Requires at least: 5.8
-* Tested up to: 5.9.0
+* Tested up to: 6.1.0
 * Requires PHP: 7.2
 * Stable tag: @@plugin_version
 * License: GPLv2 or later
@@ -28,6 +28,12 @@ the Wordpress Author to choose either wordpress posts, pages or categories.
 * The select options can be restricted to use a certain entry as parent
 
 ### Restrictions
+
+#### Select Multiple Restrictions
+
+* The option "Select Multiple" is only available for the entity type `Post` / `Pages` / `Taxonomy`
+
+#### Max Item Restriction
 
 The custom control is using the `getEntityRecords` method.
 
@@ -66,6 +72,11 @@ via your favourite FTP application. The WordPress codex contains
 You can use the custom control exactly how you use normal controls for lazy blocks
 
 ## Changelog
+
+= 2.4.0 =
+
+* Add option to select multiple items for Entity Types `post` | `page` | `taxonomy`
+* changed compatibility to WP version to 6.1.0
 
 = 2.2.1 =
 
