@@ -91,8 +91,6 @@ export default compose([
 			per_page: -1,
 		};
 
-		debugger
-
 		if (ownProps.entityType === 'post') {
 			entityKind = 'postType';
 			entityName = ownProps.postType || 'post'; // if a postType is given we use it (to get custom posts)
