@@ -18,24 +18,26 @@ const {
 	BaseControl,
 	RadioControl,
   	CheckboxControl,
+  	TextControl,
 } = wp.components;
 
 /**
  * Control render in editor.
  */
-addFilter('lzb.editor.control.select_dynamic.render', 'lzb.editor', (render, props) => (
-  <SelectDynamicControl
-	label={props.data.label}
-	help={props.data.help}
-	entityType={props.data.entity_type}
-	postType={props.data.post_type}
-	taxonomyType={props.data.taxonomy_type}
-	parentEntity={props.data.parent_entity}
-	multiple={ 'true' === props.data.multiple }
-	value={props.getValue()}
-	onChange={props.onChange}
-  />
-));
+addFilter('lzb.editor.control.select_dynamic.render', 'lzb.editor', (render, props, blockData) => {
+	return <SelectDynamicControl
+	  label={props.data.label}
+	  help={props.data.help}
+	  entityType={props.data.entity_type}
+	  postType={props.data.conditional !== '' ? blockData.attributes[props.data.conditional] : props.data.post_type}
+	  taxonomyType={props.data.taxonomy_type}
+	  parentEntity={props.data.parent_entity}
+	  multiple={ 'true' === props.data.multiple }
+	  conditional={props.data.conditional }
+	  value={props.getValue()}
+	  onChange={props.onChange}
+	/>
+});
 
 /**
  * Control settings render in lazy block constructor mode.
@@ -119,7 +121,7 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 			  )}
 
 		  </PanelBody>
-		  {(props.data.entity_type && (props.data.entity_type === 'post' || props.data.entity_type === 'page' || props.data.entity_type === 'taxonomy')) && (
+		  {(props.data.entity_type && (props.data.entity_type === 'post-type' || props.data.entity_type === 'post' || props.data.entity_type === 'page' || props.data.entity_type === 'taxonomy')) && (
 			<PanelBody>
 				<BaseControl
 				  label={ __( 'Multiple', '@@text_domain' ) }
@@ -131,6 +133,17 @@ addFilter('lzb.constructor.control.select_dynamic.settings', 'lzb.constructor', 
 					  onChange={ ( value ) => updateData( { multiple: value ? 'true' : 'false' } ) }
 					/>
 				</BaseControl>
+			</PanelBody>
+		  )}
+
+		  {(props.data.entity_type && props.data.entity_type === 'post') && (
+			<PanelBody>
+				<TextControl
+				  label={ __( 'Conditional', '@@text_domain' ) }
+				  help={ __( 'Allows you to select Posts based on another control value. Please enter the "Name" of the field, where the Post types should be taken from.', '@@text_domain' ) }
+				  value={ data.conditional }
+				  onChange={ ( value ) => updateData( { conditional: value } ) }
+				/>
 			</PanelBody>
 		  )}
 	  </Fragment>

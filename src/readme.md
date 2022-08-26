@@ -73,6 +73,10 @@ You can use the custom control exactly how you use normal controls for lazy bloc
 
 ## Changelog
 
+= 2.6.0 =
+
+* Add option to conditionally select posts based on a second dynamic select where the author can choose post types first
+
 = 2.4.0 =
 
 * Add option to select multiple items for Entity Types `post` | `page` | `taxonomy`

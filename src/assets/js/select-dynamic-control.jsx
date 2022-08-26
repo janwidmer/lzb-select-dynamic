@@ -116,6 +116,24 @@ export default compose([
 			return {
 				items: select("core").getTaxonomies(),
 			};
+		} else if (ownProps.entityType === 'post' && ownProps.conditional !== '' && Array.isArray(ownProps.postType)) {
+			let items = [];
+
+			ownProps.postType.forEach((postType) => {
+				const args = [entityKind, postType, query];
+
+				if (!select('core/data').isResolving('core', 'getEntityRecords', args)) {
+					const result = select('core').getEntityRecords(entityKind, postType, query);
+
+					if (result !== null) {
+						items = [...items, ...result];
+					}
+				}
+			});
+
+			return {
+				items,
+			};
 		} else {
 			return {
 				items: select('core').getEntityRecords(entityKind, entityName, query),

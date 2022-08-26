@@ -51,6 +51,7 @@ if ( ! class_exists( 'ww_Lzb_Control_select_dynamic' ) ) :
             // Optional additional attributes, that will be saved in control data.
             $this->attributes = array(
                 'multiple'      => 'false',
+                'conditional'      => '',
             );
 
             // Filters.
@@ -67,14 +68,14 @@ if ( ! class_exists( 'ww_Lzb_Control_select_dynamic' ) ) :
                 'ww-lzb-control-select_dynamic',
                 ww_Lzb_Plugin_select_dynamic::$plugin_url . 'assets/js/select-dynamic.min.js',
                 array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components' ),
-                '1.0.0',
+                '2.5.24',
                 true
             );
             wp_register_style(
                 'ww-lzb-control-select_dynamic',
                 ww_Lzb_Plugin_select_dynamic::$plugin_url . 'assets/css/select-dynamic.min.css',
                 array(),
-                '1.0.0'
+                '2.5.24'
             );
         }
 
