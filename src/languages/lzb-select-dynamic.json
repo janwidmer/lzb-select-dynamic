@@ -79,6 +79,12 @@
          ],
          "Yes": [
             ""
+         ],
+         "Conditional": [
+            ""
+         ],
+         "Allows you to select Posts based on another control value. Please enter the \"Name\" of the field, where the Post types should be taken from.": [
+            ""
          ]
       }
    }

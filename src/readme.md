@@ -3,7 +3,7 @@
 * Contributors: janwidmer
 * Tags: lazy-blocks, lazy blocks, custom control, select dynamic
 * Requires at least: 5.8
-* Tested up to: 6.1.0
+* Tested up to: 6.3.1
 * Requires PHP: 7.2
 * Stable tag: @@plugin_version
 * License: GPLv2 or later
@@ -13,7 +13,7 @@ lazy-blocks custom control to offer a dynamic select containing wordpress posts,
 
 ## Description
 
-This custom control enhances the great [Lazy Blocks Plugin](https://lazyblocks.com/) and can be used in blocks to offer 
+This custom control enhances the great [Lazy Blocks Plugin](https://lazyblocks.com/) and can be used in blocks to offer
 the Wordpress Author to choose either wordpress posts, pages or categories.
 
 ### Features
@@ -47,24 +47,24 @@ The custom control is using the `getEntityRecords` method.
 
 ## Installation
 
-* Make sure you use WordPress 5.0.x. As alternative you need to install the 
+* Make sure you use WordPress 5.0.x. As alternative you need to install the
   [Gutenberg plugin](https://wordpress.org/plugins/gutenberg/) to use Lazy Blocks.
 * Make sure, you have installed the [Lazy Blocks Plugin](https://lazyblocks.com/)
 
 ### Automatic installation
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to 
-leave your web browser. To do an automatic install of lzb-select-dynamic, log in to your WordPress dashboard, 
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to
+leave your web browser. To do an automatic install of lzb-select-dynamic, log in to your WordPress dashboard,
 navigate to the Plugins menu and click Add New.
 
-In the search field type lzb-select-dynamic and click Search Plugins. Once you’ve found our plugin you can view details 
-about it such as the point release, rating and description. Most importantly of course, you can install it by simply 
+In the search field type lzb-select-dynamic and click Search Plugins. Once you’ve found our plugin you can view details
+about it such as the point release, rating and description. Most importantly of course, you can install it by simply
 clicking “Install Now”.
 
 ### Manual installation
 
-The manual installation method involves downloading our lzb-select-dynamic plugin and uploading it to your webserver 
-via your favourite FTP application. The WordPress codex contains 
+The manual installation method involves downloading our lzb-select-dynamic plugin and uploading it to your webserver
+via your favourite FTP application. The WordPress codex contains
 [instructions on how to do this here](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
 ## Usage
@@ -72,6 +72,10 @@ via your favourite FTP application. The WordPress codex contains
 You can use the custom control exactly how you use normal controls for lazy blocks
 
 ## Changelog
+
+= 2.7.0 =
+
+* WP Compatibility up to 6.3.1
 
 = 2.6.0 =
 
@@ -102,7 +106,7 @@ You can use the custom control exactly how you use normal controls for lazy bloc
 
 = 2.1.0 =
 
-* Enhancement to have Taxonomy Type as an option 
+* Enhancement to have Taxonomy Type as an option
 
 = 2.0.0 =
 
