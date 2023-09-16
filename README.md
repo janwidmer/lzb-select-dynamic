@@ -6,7 +6,7 @@ lazy-blocks custom control to offer a dynamic select containing wordpress posts,
 
 ### Installation
 
-- Install PHP `brew install php@7.4`, see https://stackoverflow.com/a/64724216
+- Install PHP `brew install php@8.2.0`, see https://stackoverflow.com/a/64724216
 - Install Composer `brew install composer`
 - Run `npm install` in the command line
 - Make sure, you use the correct node version according to the `.node-version` file
