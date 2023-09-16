@@ -73,7 +73,7 @@ You can use the custom control exactly how you use normal controls for lazy bloc
 
 ## Changelog
 
-= 2.7.0 =
+= 2.8.0 =
 
 * WP Compatibility up to 6.3.1
 
