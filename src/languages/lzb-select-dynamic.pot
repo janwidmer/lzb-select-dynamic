@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Jan Widmer
+# Copyright (C) 2024 Jan Widmer
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-16T14:31:32+00:00\n"
+"POT-Creation-Date: 2024-11-23T07:10:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: @@text_domain\n"
