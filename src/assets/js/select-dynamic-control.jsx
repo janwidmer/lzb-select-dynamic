@@ -114,6 +114,7 @@ export default compose([
 			};
 		} else if (ownProps.entityType === 'taxonomy-type') {
 			return {
+				// parameter needed because https://github.com/WordPress/gutenberg/issues/38563
 				items: select("core").getTaxonomies({ per_page: -1 }),
 			};
 		} else if (ownProps.entityType === 'post' && ownProps.conditional !== '' && Array.isArray(ownProps.postType)) {
