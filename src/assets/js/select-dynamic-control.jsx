@@ -114,7 +114,7 @@ export default compose([
 			};
 		} else if (ownProps.entityType === 'taxonomy-type') {
 			return {
-				items: select("core").getTaxonomies(),
+				items: select("core").getTaxonomies({ per_page: -1 }),
 			};
 		} else if (ownProps.entityType === 'post' && ownProps.conditional !== '' && Array.isArray(ownProps.postType)) {
 			let items = [];
